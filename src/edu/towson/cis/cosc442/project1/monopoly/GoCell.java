@@ -1,8 +1,6 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
 public class GoCell extends Cell {
-	private boolean available = true;
-
 	public GoCell() {
 		super.setName("Go");
 		setAvailable(false);
@@ -12,13 +10,5 @@ public class GoCell extends Cell {
 	}
 	
 	void setName(String name) {
-	}
-
-	public boolean isAvailable() {
-		return available;
-	}
-
-	public void setAvailable(boolean available) {
-		this.available = available;
 	}
 }
