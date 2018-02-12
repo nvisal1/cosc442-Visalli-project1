@@ -196,16 +196,20 @@ public class GameMaster {
 	}
 	
 	public void movePlayer(Player player, int diceValue) {
+		gui(player, diceValue);
+		updateGUI();
+	}
+
+	private void gui(Player player, int diceValue) {
 		Cell currentPosition = player.getPosition();
 		int positionIndex = gameBoard.queryCellIndex(currentPosition.getName());
-		int newIndex = (positionIndex+diceValue)%gameBoard.getCellNumber();
-		if(newIndex <= positionIndex || diceValue > gameBoard.getCellNumber()) {
+		int newIndex = (positionIndex + diceValue) % gameBoard.getCellNumber();
+		if (newIndex <= positionIndex || diceValue > gameBoard.getCellNumber()) {
 			player.setMoney(player.getMoney() + 200);
 		}
 		player.setPosition(gameBoard.getCell(newIndex));
 		gui.movePlayer(getPlayerIndex(player), positionIndex, newIndex);
 		playerMoved(player);
-		updateGUI();
 	}
 
 	public void playerMoved(Player player) {

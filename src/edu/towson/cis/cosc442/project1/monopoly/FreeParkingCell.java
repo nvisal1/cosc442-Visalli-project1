@@ -7,6 +7,7 @@ public class FreeParkingCell extends Cell {
 	}
 
 	public boolean playAction(String msg) {
-		return;
+		boolean bool = true; 
+		return bool;
 	}
 }
